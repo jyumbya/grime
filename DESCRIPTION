@@ -1,0 +1,15 @@
+Package: grime
+Type: Package
+Title: Extracts soil property data from SoilGrids
+Version: 0.1.0
+Author: John Mutua
+Maintainer: John Mutua <ymutua@gmail.com>
+Description: This package extracts soil property data from SoilGrids
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/jyumbya/grime
+RoxygenNote: 7.0.0
+Imports: 
+    raster,
+    GSIF
