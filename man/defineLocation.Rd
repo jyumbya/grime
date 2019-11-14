@@ -17,10 +17,10 @@ defineLocation(lon, lat, id)
 Create a spatial point dataframe
 }
 \examples{
-library(sp)
+library(grime)
 lon <- 37.437971
 lat <- -1.86698
-id <-"Matwiku"
+id <- "Matwiku"
 pnts <- defineLocation(lon, lat, id)
 pnts
 

@@ -16,7 +16,7 @@ list
 Create class for SoilGrids REST API
 }
 \examples{
-library(GSIF)
+library(grime)
 ls <- c("ORCDRC", "PHIHOX")
 slist <- defineSoilProperties(ls)
 slist

@@ -18,15 +18,15 @@ dataframe
 Extract soil properties from soil grids
 }
 \examples{
-library(rjson)
-library(sp)
+\dontrun{library(grime)
 lon <- 37.437971
 lat <- -1.86698
-id <-"Matwiku"
+id <- "Matwiku"
 pnts <- defineLocation(lon, lat, id)
 ls <- c("ORCDRC", "PHIHOX")
 slist <- defineSoilProperties(ls)
-soil_properties <- extractSoilsProperties(slist, pnts)
+soil_properties <- extractSoilProperties(slist, pnts)
 soil_properties
+}
 
 }
