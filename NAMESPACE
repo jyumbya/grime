@@ -2,7 +2,7 @@
 
 export(defineLocation)
 export(defineSoilProperties)
-export(extractSoilsProperties)
+export(extractSoilProperties)
 importFrom(GSIF,REST.SoilGrids)
 importFrom(sp,CRS)
 importFrom(sp,SpatialPoints)

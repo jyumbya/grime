@@ -11,6 +11,6 @@ LazyData: true
 URL: https://github.com/jyumbya/grime
 RoxygenNote: 7.0.0
 Imports: 
-    raster,
     GSIF,
-    sp
+    sp,
+    rjson

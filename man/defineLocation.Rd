@@ -17,7 +17,7 @@ defineLocation(lon, lat, id)
 Create a spatial point dataframe
 }
 \examples{
-library(grime)
+library(sp)
 lon <- 37.437971
 lat <- -1.86698
 id <-"Matwiku"

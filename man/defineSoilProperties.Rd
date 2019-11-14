@@ -4,7 +4,7 @@
 \alias{defineSoilProperties}
 \title{Create class for SoilGrids REST API}
 \usage{
-defineSoilProperties(...)
+defineSoilProperties(ls)
 }
 \arguments{
 \item{ls}{Vector containing list of soil properties to extract (ORCDRC, PHIHOX)}
@@ -16,7 +16,7 @@ list
 Create class for SoilGrids REST API
 }
 \examples{
-library(grime)
+library(GSIF)
 ls <- c("ORCDRC", "PHIHOX")
 slist <- defineSoilProperties(ls)
 slist

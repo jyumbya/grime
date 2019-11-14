@@ -16,7 +16,7 @@ require(GSIF)
 #' @importFrom sp CRS
 #'
 #' @examples
-#' library(grime)
+#' library(sp)
 #' lon <- 37.437971
 #' lat <- -1.86698
 #' id <-"Matwiku"
@@ -51,16 +51,16 @@ defineLocation <- function(lon, lat, id) {
 #' @importFrom GSIF REST.SoilGrids
 #'
 #' @examples
-#' library(grime)
+#' library(GSIF)
 #' ls <- c("ORCDRC", "PHIHOX")
 #' slist <- defineSoilProperties(ls)
 #' slist
 #'
 #' @export
 
-defineSoilProperties <- function(...) {
+defineSoilProperties <- function(ls) {
 
-  GSIF::REST.SoilGrids(c(...))
+  REST.SoilGrids(c(ls))
 
 }
 
@@ -81,7 +81,8 @@ defineSoilProperties <- function(...) {
 #' @importFrom sp over
 #'
 #' @examples
-#' library(grime)
+#' library(rjson)
+#' library(sp)
 #' lon <- 37.437971
 #' lat <- -1.86698
 #' id <-"Matwiku"
@@ -93,8 +94,8 @@ defineSoilProperties <- function(...) {
 #'
 #' @export
 
-extractSoilsProperties <- function(slist, pnts) {
+extractSoilProperties <- function(slist, pnts) {
 
-  sp::over(slist, pnts)
+  over(slist, pnts)
 
 }

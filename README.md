@@ -1,31 +1,18 @@
-### R/grime: Handling soil property data
-
 [![Build Status](https://travis-ci.org/jyumbya/grime.svg?branch=master)](https://travis-ci.org/jyumbya/grime)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/grime)](https://cran.r-project.org/package=grime)
 
-[John Mutua](https://jyumbya.github.io)
-
-[R/grime](https://jyumbya.github.io/grime) is an [R](https://www.r-project.org) package handling soil property data.
+[grime](https://jyumbya.github.io/grime) is an [R](https://www.r-project.org) package handling soil property data.
 
 #### Installation
 
-Install R/grime from CRAN using
+First install [devtools](https://github.com/hadley/devtools) package
 
 ```r
-install.packages("grime")
+library(devtools)
+install.packages("devtools")
 ```
 
-Alternatively, install it from its
-[GitHub repository](https://github.com/jyumbya/grime). You first need to
-install the [R/grime](https://github.com/jyumbya/grime),
-and [devtools](https://github.com/hadley/devtools) packages.
-
-```r
-install.packages(c("grime", "devtools"))
-```
-
-Then install R/grime using the `install_github` function in the
-[devtools](https://github.com/hadley/devtools) package.
+Then install `grime` using the `install_github` function
 
 ```r
 library(devtools)
@@ -39,12 +26,12 @@ i.e. 'soil carbon' and 'soil pH' from SoilGrids.
 
 ```r
 library(grime)
-x <- 37.437971
-y <- -1.86698
-z <-"Matwiku"
-pnts <- defineLocation(x,y,z)
-a <- c()
-slist <- defineSoilProperties(a)
+lon <- 37.437971
+lat <- -1.86698
+id <-"Matwiku"
+pnts <- defineLocation(lon, lat, id)
+ls <- c("ORCDRC", "PHIHOX")
+slist <- defineSoilProperties(ls)
 soil_properties <- extractSoilsProperties(slist, pnts)
 soil_properties
 ```
