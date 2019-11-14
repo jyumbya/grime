@@ -5,11 +5,11 @@ require(GSIF)
 #'
 #' @description Create a spatial point dataframe
 #'
-#' @param y Latitude in decimal degrees
+#' @param lat Latitude in decimal degrees
 #'
-#' @param x Longitude in decimal degrees
+#' @param lon Longitude in decimal degrees
 #'
-#' @param z Character containing name of location, ID etc
+#' @param id Character containing name of location, ID etc
 #'
 #' @importFrom sp SpatialPoints
 #'
@@ -17,22 +17,22 @@ require(GSIF)
 #'
 #' @examples
 #' library(grime)
-#' x <- 37.437971
-#' y <- -1.86698
-#' z <-"Matwiku"
-#' pnts <- defineLocation(x,y, z)
+#' lon <- 37.437971
+#' lat <- -1.86698
+#' id <-"Matwiku"
+#' pnts <- defineLocation(lon, lat, id)
 #' pnts
 #'
 #' @export
 
-defineLocation <- function(x, y, z) {
+defineLocation <- function(lon, lat, id) {
 
   # x=long, y=lat, z=id(string)
-  x <- as.numeric(x)  # convert x from characters to numeric
+  lon <- as.numeric(lon)  # convert x from characters to numeric
 
-  y <- as.numeric(y)  # convert and y from characters to numeric
+  lat <- as.numeric(lat)  # convert and y from characters to numeric
 
-  pts <- data.frame(lon = x, lat = y, id = z)  # dataframe
+  pts <- data.frame(lon = lon, lat = lat, id = id)  # dataframe
 
   # create a spatialpoints
   SpatialPoints(pts[, c("lon", "lat")], proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
@@ -44,7 +44,7 @@ defineLocation <- function(x, y, z) {
 #'
 #' @description Create class for SoilGrids REST API
 #'
-#' @param a Vector containing list of soil properties to extract (ORCDRC, PHIHOX)
+#' @param ls Vector containing list of soil properties to extract (ORCDRC, PHIHOX)
 #'
 #' @return list
 #'
@@ -52,8 +52,8 @@ defineLocation <- function(x, y, z) {
 #'
 #' @examples
 #' library(grime)
-#' a <- c("ORCDRC", "PHIHOX")
-#' slist <- defineSoilProperties(a)
+#' ls <- c("ORCDRC", "PHIHOX")
+#' slist <- defineSoilProperties(ls)
 #' slist
 #'
 #' @export
@@ -82,19 +82,19 @@ defineSoilProperties <- function(...) {
 #'
 #' @examples
 #' library(grime)
-#' x <- 37.437971
-#' y <- -1.86698
-#' z <-"Matwiku"
-#' pnts <- defineLocation(x,y,z)
-#' a <- c("ORCDRC", "PHIHOX")
-#' slist <- defineSoilProperties(a)
+#' lon <- 37.437971
+#' lat <- -1.86698
+#' id <-"Matwiku"
+#' pnts <- defineLocation(lon, lat, id)
+#' ls <- c("ORCDRC", "PHIHOX")
+#' slist <- defineSoilProperties(ls)
 #' soil_properties <- extractSoilsProperties(slist, pnts)
 #' soil_properties
 #'
 #' @export
 
-extractSoilsProperties <- function(x, y) {
+extractSoilsProperties <- function(slist, pnts) {
 
-  sp::over(x, y)
+  sp::over(slist, pnts)
 
 }

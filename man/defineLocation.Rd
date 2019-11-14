@@ -4,24 +4,24 @@
 \alias{defineLocation}
 \title{Create a spatial point dataframe}
 \usage{
-defineLocation(x, y, z)
+defineLocation(lon, lat, id)
 }
 \arguments{
-\item{x}{Longitude in decimal degrees}
+\item{lon}{Longitude in decimal degrees}
 
-\item{y}{Latitude in decimal degrees}
+\item{lat}{Latitude in decimal degrees}
 
-\item{z}{Character containing name of location, ID etc}
+\item{id}{Character containing name of location, ID etc}
 }
 \description{
 Create a spatial point dataframe
 }
 \examples{
 library(grime)
-x <- 37.437971
-y <- -1.86698
-z <-"Matwiku"
-pnts <- defineLocation(x,y, z)
+lon <- 37.437971
+lat <- -1.86698
+id <-"Matwiku"
+pnts <- defineLocation(lon, lat, id)
 pnts
 
 }

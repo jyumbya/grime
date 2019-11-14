@@ -7,7 +7,7 @@
 defineSoilProperties(...)
 }
 \arguments{
-\item{a}{Vector containing list of soil properties to extract (ORCDRC, PHIHOX)}
+\item{ls}{Vector containing list of soil properties to extract (ORCDRC, PHIHOX)}
 }
 \value{
 list
@@ -17,8 +17,8 @@ Create class for SoilGrids REST API
 }
 \examples{
 library(grime)
-a <- c("ORCDRC", "PHIHOX")
-slist <- defineSoilProperties(a)
+ls <- c("ORCDRC", "PHIHOX")
+slist <- defineSoilProperties(ls)
 slist
 
 }

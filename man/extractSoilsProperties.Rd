@@ -4,7 +4,7 @@
 \alias{extractSoilsProperties}
 \title{Extract soil properties from soil grids}
 \usage{
-extractSoilsProperties(x, y)
+extractSoilsProperties(slist, pnts)
 }
 \arguments{
 \item{slist}{Object of class "list"; contains parameters or REST.SoilGrids query}
@@ -19,12 +19,12 @@ Extract soil properties from soil grids
 }
 \examples{
 library(grime)
-x <- 37.437971
-y <- -1.86698
-z <-"Matwiku"
-pnts <- defineLocation(x,y,z)
-a <- c("ORCDRC", "PHIHOX")
-slist <- defineSoilProperties(a)
+lon <- 37.437971
+lat <- -1.86698
+id <-"Matwiku"
+pnts <- defineLocation(lon, lat, id)
+ls <- c("ORCDRC", "PHIHOX")
+slist <- defineSoilProperties(ls)
 soil_properties <- extractSoilsProperties(slist, pnts)
 soil_properties
 
